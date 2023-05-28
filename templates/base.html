@@ -1,0 +1,32 @@
+<!doctype html>
+<title>JavaScript Example</title>
+<link rel="stylesheet" href="https://unpkg.com/sakura.css@1.0.0/css/normalize.css">
+<link rel="stylesheet" href="https://unpkg.com/sakura.css@1.0.0/css/sakura-earthly.css">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/load.css') }}">
+<style>
+  ul { margin: 0; padding: 0; display: flex; list-style-type: none; }
+  li > * { padding: 1em; }
+  li.active > a { color: #5e5e5e; border-bottom: 2px solid #4a4a4a; }
+  form { display: flex; }
+  label > input { width: 3em; }
+  form > * { padding-right: 5em; }
+  #result { font-weight: bold; }
+</style>
+<!--<ul>
+  <li><span>Type:</span>
+  <li class="{% if js == 'plain' %}active{% endif %}">
+    <a href="{{ url_for('index', js='plain') }}">Plain</a>
+  <li class="{% if js == 'fetch' %}active{% endif %}">
+    <a href="{{ url_for('index', js='fetch') }}">Fetch</a>
+  <li class="{% if js == 'jquery' %}active{% endif %}">
+    <a href="{{ url_for('index', js='jquery') }}">jQuery</a>
+</ul>-->
+<div class="message" id="message">
+  <h4>Ресурс позволяет определить, из какой локации подключён каждый пользователь</h4>
+</div>
+<hr>
+<form id="calc">
+  <input type="submit" value="Запросить">
+</form>
+<span><span id="result"></span></span>
+{% block script %}{% endblock %}
