@@ -16,6 +16,9 @@ $ source staffLocationWEB/bin/activate
 3. Next install some Python modules - `pip3 install -r requirements` or `python3 -m pip install -r requirements`  
 If you don't have pip3 then you may install it [how described here](https://pip.pypa.io/en/stable/installation/)
 
+4. Install submodule Python requirements - `pip3 install -r getLinuxUserLocation/requirements` or `python3 -m pip install -r getLinuxUserLocation/requirements`
+5. Follow [4-7 README points of submodule project](https://github.com/mperov/getLinuxUserLocation/blob/main/README.md)
+
 ## Usage
 1. Run project
 ```console
