@@ -6,9 +6,9 @@ import time
 
 app = Flask(__name__)
 
-@app.route('/add', methods=["POST"])
-def add():
-    text = getLocation.show(host='localhost', user='coder', port=22, debug=True)
+@app.route('/server1', methods=["POST"])
+def server1():
+    text = getLocation.show(host='localhost', user='coder', port=22)
     return jsonify(result=text)
 
 @app.route('/server2', methods=["POST"])

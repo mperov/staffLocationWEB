@@ -2,7 +2,7 @@
 
 {% block script %}
   <script>
-    function addSubmit() {
+    function server1_Submit() {
       var span = document.getElementById('result');
       span.innerText = '';
       const calc = document.getElementById('calc');
@@ -12,12 +12,12 @@
       div.innerHTML = '<div id="loader" class="loader" style="text-align:center"></div>';
       parent.append(div)
       var request = new XMLHttpRequest();
-      request.addEventListener('load', addShow);
-      request.open('POST', {{ url_for('add')|tojson }});
+      request.addEventListener('load', server1_Show);
+      request.open('POST', {{ url_for('server1')|tojson }});
       request.send();
     }
 
-    function addShow() {
+    function server1_Show() {
       var data = JSON.parse(this.responseText);
       if (data != null) {
           const loader = document.getElementById('loader');
@@ -35,12 +35,12 @@
         let form = document.createElement('form')
         form.id = 'calc'
         form.innerHTML = '<input type="submit" value="Get">';
-        form.addEventListener('submit', addSubmit);
+        form.addEventListener('submit', server1_Submit);
         parent.append(form)
     }
 
     var form = document.getElementById('calc');
-    form.addEventListener('submit', addSubmit);
+    form.addEventListener('submit', server1_Submit);
 
   </script>
 {% endblock %}
