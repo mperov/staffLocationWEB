@@ -12,21 +12,19 @@
   form > * { padding-right: 5em; }
   #result { font-weight: bold; }
 </style>
-<!--<ul>
-  <li><span>Type:</span>
-  <li class="{% if js == 'plain' %}active{% endif %}">
-    <a href="{{ url_for('index', js='plain') }}">Plain</a>
-  <li class="{% if js == 'fetch' %}active{% endif %}">
-    <a href="{{ url_for('index', js='fetch') }}">Fetch</a>
-  <li class="{% if js == 'jquery' %}active{% endif %}">
-    <a href="{{ url_for('index', js='jquery') }}">jQuery</a>
-</ul>-->
+<ul>
+  <li><span>Remote server:</span>
+  <li class="{% if js == 'server1' %}active{% endif %}">
+    <a href="{{ url_for('index', js='server1') }}">Server #1</a>
+  <li class="{% if js == 'server2' %}active{% endif %}">
+    <a href="{{ url_for('index', js='server2') }}">Server #2</a>
+</ul>
 <div class="message" id="message">
-  <h4>Ресурс позволяет определить, из какой локации подключён каждый пользователь</h4>
+  <h4>It allows to show location of each user on your remote server.</h4>
 </div>
 <hr>
 <form id="calc">
-  <input type="submit" value="Запросить">
+  <input type="submit" value="Get">
 </form>
 <span><span id="result"></span></span>
 {% block script %}{% endblock %}
