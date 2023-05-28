@@ -11,9 +11,15 @@ def add():
     text = getLocation.show(host='localhost', user='coder', port=22, debug=True)
     return jsonify(result=text)
 
-@app.route('/')
-def index():
-    return render_template('plain.html')
+@app.route('/server2', methods=["POST"])
+def server2():
+    text = getLocation.show(host='localhost', user='coder', port=1022, debug=True, old=True)
+    return jsonify(result=text)
+
+@app.route("/", defaults={"js": "server1"})
+@app.route("/<any(server1, server2):js>")
+def index(js):
+    return render_template(f"{js}.html", js=js)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)

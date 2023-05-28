@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block script %}
+  <script>
+    function server2_Submit() {
+      var span = document.getElementById('result');
+      span.innerText = '';
+      const calc = document.getElementById('calc');
+      const parent = calc.parentNode
+      parent.removeChild(calc)
+      let div = document.createElement('div')
+      div.innerHTML = '<div id="loader" class="loader" style="text-align:center"></div>';
+      parent.append(div)
+      var request = new XMLHttpRequest();
+      request.addEventListener('load', server2_Show);
+      request.open('POST', {{ url_for('server2')|tojson }});
+      request.send();
+    }
+
+    function server2_Show() {
+      var data = JSON.parse(this.responseText);
+      if (data != null) {
+          const loader = document.getElementById('loader');
+          const parent = loader.parentNode
+          parent.removeChild(loader)
+      }
+      var span = document.getElementById('result');
+      span.innerText = data.result;
+      myReset();
+    }
+
+    function myReset() {
+        const message = document.getElementById('message');
+        const parent = message.parentNode
+        let form = document.createElement('form')
+        form.id = 'calc'
+        form.innerHTML = '<input type="submit" value="Get">';
+        form.addEventListener('submit', server2_Submit);
+        parent.append(form)
+    }
+
+    var form = document.getElementById('calc');
+    form.addEventListener('submit', server2_Submit);
+
+  </script>
+{% endblock %}
