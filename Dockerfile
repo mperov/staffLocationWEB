@@ -25,4 +25,4 @@ RUN /usr/local/bin/python -m pip install --upgrade pip \
 
 USER runner
 
-CMD ["/home/runner/staffLocation.py"]
+ENTRYPOINT ["python3", "/home/runner/staffLocation.py"]
