@@ -1,0 +1,3 @@
+[submodule "getLinuxUserLocation"]
+	path = getLinuxUserLocation
+	url = https://github.com/mperov/getLinuxUserLocation.git
