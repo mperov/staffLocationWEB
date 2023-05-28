@@ -2,7 +2,7 @@ FROM python:3.8-slim
 
 RUN useradd -m runner
 
-COPY --chown=runner:runner ./informant.py /home/runner/staffLocation.py
+COPY --chown=runner:runner ./staffLocation.py /home/runner/staffLocation.py
 COPY --chown=runner:runner ./requirements /home/runner/requirements
 RUN mkdir -p /home/runner/getLinuxUserLocation
 COPY --chown=runner:runner ./getLinuxUserLocation/getLocation.py /home/runner/getLinuxUserLocation/getLocation.py
