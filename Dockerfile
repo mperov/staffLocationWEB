@@ -13,6 +13,7 @@ COPY --chown=runner:runner ./templates/server1.html /home/runner/templates/serve
 COPY --chown=runner:runner ./templates/server2.html /home/runner/templates/server2.html
 RUN mkdir -p /home/runner/static/css
 COPY --chown=runner:runner ./static/css/load.css /home/runner/static/css/load.css
+RUN mkdir -p /home/runner/.ssh
 
 ENV PYTHONPATH /home/runner
 
