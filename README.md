@@ -14,7 +14,7 @@ Project allows to show location of each user on your remote server.
 $ git clone --recursive https://github.com/mperov/staffLocationWEB.git
 $ cd staffLocationWEB/
 ```
-2. 1) change full path to your .ssh folder in docker-compose.yml (/home/coder/.ssh is example path);
+2. 1) change full path to your .ssh folder in docker-compose.yml (*/home/coder/.ssh* is example path);
    2) Input IP address of your remote machine also change username and modify ssh port if it isn't 22 in call `getLocation.show()` that is at staffLocation.py source file;  
    3) Follow [4-7 README points of submodule project](https://github.com/mperov/getLinuxUserLocation/blob/main/README.md).  
 3. Build and run container:
