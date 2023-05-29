@@ -44,6 +44,7 @@ If you don't have pip3 then you may install it [how described here](https://pip.
 4. Install submodule Python requirements - `pip3 install -r getLinuxUserLocation/requirements` or `python3 -m pip install -r getLinuxUserLocation/requirements`
 5. Follow [4-7 README points of submodule project](https://github.com/mperov/getLinuxUserLocation/blob/main/README.md)
 6. Input IP address of your remote machine also change username and modify ssh port if it isn't 22 in call `getLocation.show()` that is at staffLocation.py source file.
+7. Set nginx credentials via variables **BASIC_USERNAME** and **BASIC_PASSWORD** in [docker-compose.yml](https://github.com/mperov/staffLocationWEB/blob/master/docker-compose.yml).
 
 ### Usage
 1. Run project
