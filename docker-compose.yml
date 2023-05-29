@@ -6,7 +6,21 @@ services:
             context: .
             dockerfile: ./Dockerfile
         ports:
-        - 8080:8080
+        - 127.0.0.1:8080:8080
         volumes:
         - /home/coder/.ssh:/home/runner/.ssh/:ro
         restart: always
+    nginx:
+        image: nginx-auth
+        build:
+            context: .
+            dockerfile: ./nginx-Dockerfile
+        ports:
+        - 8080:8080
+        depends_on:
+        - staffLocation
+        environment:
+        - FORWARD_HOST=staffLocation
+        - FORWARD_PORT=8080
+        - BASIC_USERNAME=boss
+        - BASIC_PASSWORD=boss
