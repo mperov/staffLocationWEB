@@ -5,8 +5,6 @@ services:
         build:
             context: .
             dockerfile: ./Dockerfile
-        ports:
-        - 127.0.0.1:8080:8080
         volumes:
         - /home/coder/.ssh:/home/runner/.ssh/:ro
         restart: always
@@ -24,3 +22,4 @@ services:
         - FORWARD_PORT=8080
         - BASIC_USERNAME=boss
         - BASIC_PASSWORD=boss
+        restart: always
