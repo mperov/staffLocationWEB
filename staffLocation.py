@@ -14,14 +14,14 @@ DEBUG=False
 def server1():
     if DEBUG:
         print(inspect.currentframe().f_code.co_name)
-    text = getLocation.show(host='localhost', user='coder', port=22, debug=DEBUG)
+    text = getLocation.show(host='localhost', user='coder', filename='/home/runner/.ssh/id_rsa', port=22, debug=DEBUG)
     return jsonify(result=text)
 
 @app.route('/location/server2', methods=["POST"])
 def server2():
     if DEBUG:
         print(inspect.currentframe().f_code.co_name)
-    text = getLocation.show(host='localhost', user='coder', port=1022, debug=DEBUG, old=True)
+    text = getLocation.show(host='localhost', user='coder', filename='/home/runner/.ssh/id_rsa', port=1022, debug=DEBUG, old=True)
     return jsonify(result=text)
 
 @app.route("/location/", defaults={"js": "server1"})
