@@ -22,7 +22,7 @@ $ cd staffLocationWEB/
 $ docker-compose build
 $ docker-compose up -d
 ```
-**If it's all right site http://localhost:8080 will be available.**
+**If it's all right site http://localhost:8080/location will be available.**
 
 ## Typical startup
 
@@ -51,4 +51,4 @@ If you don't have pip3 then you may install it [how described here](https://pip.
 $ source staffLocationWEB/bin/activate
 $ ./staffLocation.py
 ```
-2. Open your favorite browser and go to http://localhost:8080
+2. Open your favorite browser and go to http://localhost:8080/location
