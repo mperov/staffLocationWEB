@@ -2,7 +2,7 @@
 
 from flask import Flask, jsonify, render_template, request
 from getLinuxUserLocation import getLocation
-from gevent.pywsgi import WSGIServer
+from waitress import serve
 import inspect
 
 app = Flask(__name__)
@@ -35,5 +35,4 @@ if __name__ == '__main__':
     if DEBUG:
         app.run(host='0.0.0.0', port=8080)
     else:
-        http_server = WSGIServer(('0.0.0.0', 8080), app)
-        http_server.serve_forever()
+        serve(app, host="0.0.0.0", port=8080)
